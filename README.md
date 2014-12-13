@@ -1,5 +1,27 @@
-interpolation
-=============
+# Interpolation
+
+## Demo
+http://avdeev.github.io/interpolation/
+
+## Lagrange Interpolation
+
+```js
+  var getLagrange = function(xInterpolationArray) {
+    L = '';
+    _.each(xInterpolationArray, function(dotActive, i) {
+      if (i > 0) {
+        L += '+';
+      }
+      L += '' + dotActive[1];
+      _.each(xInterpolationArray, function(dot, j) {
+        if (i != j) {
+          L += '*((x-' + dot[0] + ') / (' + dotActive[0] + ' - ' + dot[0] + '))';
+        }
+      });
+    });
+    return L;
+  }
+```
 
 ## Vendor
 
