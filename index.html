@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/application.css" />
+  <script type="text/javascript" src="js/vendor/underscore-min.js"></script>
+  <script type="text/javascript" src="js/vendor//jquery.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/vendor/highcharts/highcharts.js"></script>
+  <script type="text/javascript" src="js/vendor/highcharts/modules/exporting.js"></script>
+  <script type="text/javascript" src="js/vendor/math.js"></script>
+  <script type="text/javascript" src="js/application.js"></script>
+  <title>Интерполяция</title>
+</head>
+
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Переключить навигацию</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Интерполяция</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3">
+        <h1>Параметры</h1>
+        <form role="form" class="form-horizontal">
+          <div class="form-group">
+            <div class="col-sm-offset-6 col-sm-6">
+              <button type="submit" class="btn btn-default">Старт</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-6">Функция</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="func" value="4 * x - cos(x)">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-6">Производная третьей степени от функции</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="func_derivative" value="- sin(x)">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-6">а</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="a" value="0.1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-6">b</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="b" value="0.6">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-6">Количество точек</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="points" value="11">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-6">x*</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="x_interpolation" value="0.37">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-xs-9">
+        <div id="chart"></div>
+        <dl class="dl-horizontal">
+          <dt>f(x*)</dt>
+          <dd id="fx"></dd>
+          <dt>L2(x*)</dt>
+          <dd id="L2x"></dd>
+          <dt>f(x*) - L2(x*)</dt>
+          <dd id="accuracyAbsolute"></dd>
+          <dt>R2(x*)</dt>
+          <dd id="accuracyAbsoluteR2"></dd>
+          <dt>maxR2(x*)</dt>
+          <dd id="maxR2"></dd>
+          <dt>L10(x*)</dt>
+          <dd id="L10x"></dd>
+        </dl>
+        <table id="seriesFx" class="table">
+          <caption>Таблица значений функции</caption>
+          <thead>
+            <tr>
+              <th>x</th>
+              <th>y</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
